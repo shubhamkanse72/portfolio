@@ -8,9 +8,12 @@ const Home = () => {
           MY NAME IS <span>SHUBHAM</span>
         </div>
         <div className="des">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora, ut
-          enim. Esse, aspernatur beatae? Quasi dicta enim distinctio doloribus
-          autem et ad? Accusantium aliquam esse mollitia totam amet dolorem at.
+          Passionate frontend developer with a total of 2 years in frontend
+          development, including 1.5 years of dedicated experience in Vue.js,
+          React.js and 7 months of internship exposure. Aspiring to become a
+          full stack developer with a focus on the MERN stack. Looking for
+          challenging and responsible opportunity to explore strengths and
+          potential in a professional organization.
         </div>
         <a href={`${process.env.PUBLIC_URL}/resume.pdf`}>Download Resume</a>
       </div>
