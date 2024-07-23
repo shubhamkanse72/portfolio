@@ -1,5 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import CustomHook from "./CustomHook";
 import {
   faReact,
   faVuejs,
@@ -10,6 +11,9 @@ import {
 } from "@fortawesome/free-brands-svg-icons";
 
 const Skills = () => {
+  const scrollTab = useRef();
+  CustomHook(scrollTab);
+
   const [listSkills] = useState([
     {
       name: "HTML",
@@ -37,7 +41,7 @@ const Skills = () => {
     },
   ]);
   return (
-    <section className="skills">
+    <section className="skills" ref={scrollTab}>
       <div className="title">These are my Skills</div>
       <div className="des">
         Proficient in HTML, JavaScript, Vue js, React js <br />

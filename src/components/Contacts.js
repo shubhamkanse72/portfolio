@@ -1,8 +1,45 @@
-import React from 'react'
+import React, { useState, useRef } from 'react';
+import CustomHook from './CustomHook';
 
 const Contacts = () => {
+  const [listContacts] = useState([
+    {
+      title : "Phone Number",
+      value: "+917066337272"
+    },
+    {
+      title : "Email",
+      value: "shubhamkanse7272@gmail.com"
+    },
+    {
+      title : "Phone Number",
+      value: "+917066337272"
+    },
+  ]);
+
+const scrollTab = useRef();
+CustomHook(scrollTab);
+
   return (
-    <div>Contacts</div>
+    <section className='contact' ref={scrollTab}>
+       <div className="title" >
+        This is my Contacts
+       </div>
+       <div className="des" >
+        {/* 20 */}
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam perspiciatis quae veniam amet nesciunt voluptatibus quis consectetur consequatur quisquam harum.
+       </div>
+       <div className="list" >
+        {
+          listContacts.map((value,key) => (
+            <div className="item" key={key}>
+              <h3>{value.title}</h3>
+              <div>{value.value}</div>
+            </div>
+          ))
+        }
+      </div>
+    </section>
   )
 }
 

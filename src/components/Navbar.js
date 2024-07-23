@@ -3,7 +3,7 @@ import { connect, useDispatch } from "react-redux";
 import { changeTabActive } from "../redux/action.js";
 
 const Navbar = ({ activeTab }) => {
-  const [listNav] = useState(["home", "skills", "projects", "contacts"]);
+  const [listNav] = useState(["home", "skills", "projects", "contact"]);
   const dispatch = useDispatch();
 
   const changeTab = (value) => {
