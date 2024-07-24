@@ -1,10 +1,5 @@
 import React, { useState, useRef } from "react";
 import CustomHook from "./CustomHook";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faPersonCircleQuestion,
-  faEarthAmericas,
-} from "@fortawesome/free-solid-svg-icons";
 
 const Projects = () => {
   const [listProjects] = useState([
@@ -12,16 +7,22 @@ const Projects = () => {
       name: "Tic Tac Toe",
       des: "The Tic Tac Toe game is a fun and interactive web application developed using React.js. It allows two players to engage in a classic game of Tic Tac Toe while also providing the option to customize their names before starting.",
       image: "/tic-tac-toe.png",
+      source: "https://github.com/shubhamkanse72/tic-tac-toe",
+      demo: "https://shubhamkanse72.github.io/tic-tac-toe/",
     },
     {
       name: "Investment Calculator",
       des: "The React Investment Calculator is a web application built using React.js that helps users plan their investments. It accepts inputs such as initial investment, annual investment, duration, and expected return, and generates a table showing year-wise details including invested capital, interest earned, total interest, and investment value for each",
       image: "/calculator.png",
+      source: "https://github.com/shubhamkanse72/investment-calculator",
+      demo: "https://shubhamkanse72.github.io/investment-calculator/",
     },
     {
       name: "React Quiz App",
       des: "This project is a web-based quiz application built with React. It tests your knowledge of React concepts and displays the results at the end.",
       image: "/quiz.png",
+      source: "https://github.com/shubhamkanse72/quiz-app",
+      demo: "https://shubhamkanse72.github.io/quiz-app/",
     },
   ]);
 
@@ -31,16 +32,18 @@ const Projects = () => {
   return (
     <section className="projects" ref={scrollTab}>
       <div className="title">Projects</div>
+
       <div className="des"></div>
       <div className="list">
         {listProjects.map((value, key) => (
           <div className="item" key={key}>
             <div className="images">
+              <div className="overlay"></div>
               <img src={value.image}></img>
-              {/* <div className="buttons">
-                <button>Demo</button>
-                <button>Source</button>
-              </div> */}
+              <div className="buttons">
+                <a href={value.source}>Source</a>
+                <a href={value.demo}>Demo</a>
+              </div>
             </div>
             <div className="content">
               <h3>{value.name}</h3>
