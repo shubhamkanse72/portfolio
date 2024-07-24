@@ -42,7 +42,7 @@ const Skills = () => {
   ]);
   return (
     <section className="skills" ref={scrollTab}>
-      <div className="title">These are my Skills</div>
+      <div className="title">Skills</div>
       <div className="des">
         Proficient in HTML, JavaScript, Vue js, React js <br />
         Familiar with TypeScript, CSS, Git, MySQL, C

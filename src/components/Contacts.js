@@ -23,7 +23,7 @@ CustomHook(scrollTab);
   return (
     <section className='contact' ref={scrollTab}>
        <div className="title" >
-        This is my Contacts
+        Contact
        </div>
        <div className="des" >
         {/* 20 */}

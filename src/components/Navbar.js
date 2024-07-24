@@ -20,7 +20,7 @@ const Navbar = ({ activeTab }) => {
 
   return (
     <header>
-      <div className="logo">{/* <img src='/logo.png'></img> */}</div>
+      <div className="logo"></div>
       <nav className={statusNav}>
         {listNav.map((value, key) => (
           <span
