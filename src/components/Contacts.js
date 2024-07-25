@@ -5,11 +5,13 @@ const Contacts = () => {
   const [listContacts] = useState([
     {
       title : "Email",
-      value: "shubhamkanse7272@gmail.com"
+      value: "shubhamkanse7272@gmail.com",
+      link: "mailto:shubhamkanse7272@gmail.com"
     },
     {
       title : "Phone Number",
-      value: "+917066337272"
+      value: "+917066337272",
+      link: "tel:7066337272"
     },
   ]);
 
@@ -29,7 +31,9 @@ CustomHook(scrollTab);
           listContacts.map((value,key) => (
             <div className="item" key={key}>
               <h3>{value.title}</h3>
-              <div>{value.value}</div>
+              <div>
+                <a href={value.link}>{value.value}</a>
+              </div>
             </div>
           ))
         }
