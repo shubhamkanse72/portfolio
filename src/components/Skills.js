@@ -1,4 +1,10 @@
 import React, { useState, useRef } from "react";
+import vue from "../assets/vue.png";
+import html from "../assets/html.png";
+import css from "../assets/css.png";
+import git from "../assets/git.png";
+import js from "../assets/js.png";
+import react from "../assets/react.png";
 // import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import CustomHook from "./CustomHook";
 // import {
@@ -17,27 +23,27 @@ const Skills = () => {
   const [listSkills] = useState([
     {
       name: "HTML",
-      icon: "/html.png",
+      icon: html,
     },
     {
       name: "CSS",
-      icon: "/css.png",
+      icon: css,
     },
     {
       name: "JavaScript",
-      icon: "/js.png",
+      icon: js,
     },
     {
       name: "Vue.js",
-      icon: "/vue.png",
+      icon: vue,
     },
     {
       name: "React.js",
-      icon: "/react.png",
+      icon: react,
     },
     {
       name: "Git",
-      icon: "/git.png",
+      icon: git,
     },
   ]);
   return (
