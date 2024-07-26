@@ -200,6 +200,9 @@ section {
         filter: blur(90px);
       }
       & .item {
+        & img {
+          max-width: 60px;
+        }
         backdrop-filter: blur(50px);
         padding: 20px;
         border-radius: 20px;
@@ -339,7 +342,7 @@ section {
       text-align: center;
       & .item {
         margin-top: 50px;
-        & a{
+        & a {
           color: inherit;
         }
       }
@@ -387,6 +390,15 @@ section {
       }
       & .avatar {
         grid-row-start: 1;
+      }
+    }
+    &.skills {
+      & .list {
+        & .item {
+          & img {
+            max-width: 54px;
+          }
+        }
       }
     }
     &.projects {

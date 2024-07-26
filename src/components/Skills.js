@@ -1,14 +1,14 @@
 import React, { useState, useRef } from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import CustomHook from "./CustomHook";
-import {
-  faReact,
-  faVuejs,
-  faHtml5,
-  faJs,
-  faCss3,
-  faGit,
-} from "@fortawesome/free-brands-svg-icons";
+// import {
+//   faReact,
+//   faVuejs,
+//   faHtml5,
+//   faJs,
+//   faCss3,
+//   faGit,
+// } from "@fortawesome/free-brands-svg-icons";
 
 const Skills = () => {
   const scrollTab = useRef();
@@ -17,27 +17,27 @@ const Skills = () => {
   const [listSkills] = useState([
     {
       name: "HTML",
-      icon: faHtml5,
+      icon: "/html.png",
     },
     {
       name: "CSS",
-      icon: faCss3,
+      icon: "/css.png",
     },
     {
       name: "JavaScript",
-      icon: faJs,
+      icon: "/js.png",
     },
     {
       name: "Vue.js",
-      icon: faVuejs,
+      icon: "/vue.png",
     },
     {
       name: "React.js",
-      icon: faReact,
+      icon: "/react.png",
     },
     {
       name: "Git",
-      icon: faGit,
+      icon: "/git.png",
     },
   ]);
   return (
@@ -50,7 +50,8 @@ const Skills = () => {
       <div className="list">
         {listSkills.map((value, key) => (
           <div className="item" key={key}>
-            <FontAwesomeIcon icon={value.icon} />
+            {/* <FontAwesomeIcon icon={value.icon} /> */}
+            <img src={value.icon} alt="skill" />
             <h3>{value.name}</h3>
           </div>
         ))}
