@@ -200,11 +200,18 @@ section {
         filter: blur(90px);
       }
       & .item {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
         & img {
           max-width: 60px;
         }
+        & h3{
+          margin-bottom: 0;
+        }
         backdrop-filter: blur(50px);
-        padding: 20px;
+        padding: 22px;
         border-radius: 20px;
         background-color: #01082488;
         text-align: center;
