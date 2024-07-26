@@ -39,7 +39,7 @@ const Projects = () => {
           <div className="item" key={key}>
             <div className="images">
               <div className="overlay"></div>
-              <img src={value.image}></img>
+              <img src={value.image} alt="project"></img>
               <div className="buttons">
                 <a href={value.source}>Source</a>
                 <a href={value.demo}>Demo</a>
