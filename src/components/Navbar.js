@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect, useCallback } from "react";
 import { connect, useDispatch } from "react-redux";
 import { changeTabActive } from "../redux/action.js";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -9,19 +9,48 @@ const Navbar = ({ activeTab }) => {
   const dispatch = useDispatch();
   const [statusNav, changeStatusNav] = useState(null);
 
-  const toggleNav = () => {
+  const navRef = useRef(null);
+  const iconRef = useRef(null);
+
+  const toggleNav = useCallback(() => {
     changeStatusNav(statusNav === null ? "active" : null);
-  };
+  }, [statusNav]);
+
+  const handleClickOutside = useCallback(
+    (event) => {
+      if (
+        navRef.current &&
+        !navRef.current.contains(event.target) &&
+        !iconRef.current.contains(event.target)
+      ) {
+        toggleNav();
+      }
+    },
+    [toggleNav]
+  );
 
   const changeTab = (value) => {
     dispatch(changeTabActive(value));
     toggleNav();
   };
 
+  useEffect(() => {
+    if (statusNav) {
+      document.body.addEventListener("mousedown", handleClickOutside);
+    } else {
+      document.body.removeEventListener("mousedown", handleClickOutside);
+    }
+
+    // Cleanup the event listener on component unmount
+    return () => {
+      document.body.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [statusNav, handleClickOutside]);
+
   return (
     <header>
       <div className="logo"></div>
-      <nav className={statusNav}>
+      <nav className={statusNav} ref={navRef}>
         {listNav.map((value, key) => (
           <span
             className={activeTab === value ? "active" : ""}
@@ -32,7 +61,7 @@ const Navbar = ({ activeTab }) => {
           </span>
         ))}
       </nav>
-      <div className="icon-bar" onClick={toggleNav}>
+      <div ref={iconRef} className="icon-bar" onClick={toggleNav}>
         <FontAwesomeIcon icon={faBars} />
       </div>
     </header>
